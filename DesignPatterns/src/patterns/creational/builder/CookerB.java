@@ -1,18 +1,18 @@
 package patterns.creational.builder;
 
-public class CookerA extends Cooker{
+public class CookerB extends Cooker{
     @Override
     public String getDrink() {
-        return "cola";
+        return "spirit";
     }
 
     @Override
     public String getMainDish() {
-        return "bugger";
+        return "rice";
     }
 
     @Override
     public String getSweet() {
-        return "ice cream";
+        return "chocolate";
     }
 }

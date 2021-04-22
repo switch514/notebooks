@@ -1,2 +1,6 @@
-package patterns.creational.factory.method;public class MeProduct {
+package patterns.creational.factory.method;
+
+public interface MeProduct {
+
+    public void use();
 }
