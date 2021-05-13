@@ -1,9 +1,9 @@
 package patterns.structural.proxy;
 
-public class Proxy implements ISubject {
+public class StaticProxy implements ISubject {
     private final ISubject subject;
 
-    public Proxy(ISubject subject) {
+    public StaticProxy(ISubject subject) {
         this.subject = subject;
     }
 
