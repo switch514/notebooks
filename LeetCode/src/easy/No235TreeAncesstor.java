@@ -1,5 +1,7 @@
 package easy;
 
+import common.TreeNode;
+
 public class No235TreeAncesstor {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root.val < p.val && root.val<q.val) {
@@ -14,13 +16,4 @@ public class No235TreeAncesstor {
         return root;
     }
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

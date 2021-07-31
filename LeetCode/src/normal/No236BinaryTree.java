@@ -1,5 +1,7 @@
 package normal;
 
+import common.TreeNode;
+
 public class No236BinaryTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(p == root || q == root){
@@ -19,10 +21,5 @@ public class No236BinaryTree {
         return null;
     }
 
-      public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
+
 }
