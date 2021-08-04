@@ -47,7 +47,7 @@ public class Offer34Search {
             right++;
         }
         return count;
-        
+
     }
 
 
