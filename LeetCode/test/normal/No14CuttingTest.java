@@ -8,6 +8,6 @@ public class No14CuttingTest {
 
     @Test
     public void cuttingRope() {
-        System.out.println(new No14Cutting().cuttingRope(10));
+        System.out.println(new No14Cutting().cuttingRope2(120));
     }
 }
