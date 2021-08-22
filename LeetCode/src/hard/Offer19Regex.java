@@ -12,35 +12,25 @@ public class Offer19Regex {
         int sL = s.length();
         int pL = myRegexes.size();
 
-        boolean[][] dp = new boolean[sL][pL];
-        dp[0][0] = myRegexes.get(0).isMatch(s.charAt(0));
-        for (int i = 1; i < sL; i++) {
-            if (myRegexes.get(0).isOptional) {
-                dp[i][0] = dp[i - 1][0] | dp[i][0];
-            } else {
-                dp[i][0] = false;
-            }
-
-            for (int j = 1; j < pL; j++) {
-                if (myRegexes.get(j).isMatch(s.charAt(i))) {
-                    if (myRegexes.get(j - 1).isOptional) {
-                        dp[i][j] = dp[i][j - 1];
-                    } else {
-                        dp[i][j] = dp[i - 1][j - 1] | dp[i][j];
+        boolean[][] dp = new boolean[sL + 1][pL + 1];
+        dp[0][0] = true;
+        for (int i = 0; i <= sL; i++) {
+            for (int j = 1; j <= pL; j++) {
+                if (myRegexes.get(j - 1).isOptional) {
+                    dp[i][j] = dp[i][j - 1];
+                    if (myRegexes.get(j - 1).isMatch(s,i)) {
+                        dp[i][j] = dp[i][j - 1] | dp[i - 1][j];
                     }
-
                 } else {
-                    if (myRegexes.get(j).isOptional) {
-                        dp[i][j] = dp[i - 1][j - 1] | dp[i][j];
-                    } else {
-                        dp[i][j] = false;
+                    if (myRegexes.get(j - 1).isMatch(s, i)) {
+                        dp[i][j] = dp[i - 1][j - 1];
                     }
                 }
             }
         }
 
 
-        return dp[sL - 1][pL - 1];
+        return dp[sL][pL];
     }
 
     private boolean isLeftRegexOptional(MyRegex currentRegex) {
@@ -93,11 +83,14 @@ public class Offer19Regex {
             character = c;
         }
 
-        public boolean isMatch(char c) {
+        public boolean isMatch(String s, int i) {
+            if(i<=0){
+                return false;
+            }
             if (isAllMatch) {
                 return true;
             }
-            if (c == character) {
+            if (s.charAt(i-1) == character) {
                 return true;
             }
 

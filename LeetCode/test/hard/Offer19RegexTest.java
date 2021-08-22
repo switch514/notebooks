@@ -9,6 +9,7 @@ public class Offer19RegexTest {
 
     @Test
     public void isMatch() {
+        Assert.assertTrue(new Offer19Regex().isMatch("aaa","ab*ac*a"));
         Assert.assertTrue(new Offer19Regex().isMatch("bbbba",".*a*a"));
         Assert.assertFalse(new Offer19Regex().isMatch("aa","a"));
         Assert.assertTrue(new Offer19Regex().isMatch("aa","a*"));
