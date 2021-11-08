@@ -13,6 +13,8 @@ public class Offer67StrToInt {
             char c = str.charAt(i);
             if((('-' == c|| '+' ==c) && i==0) || (c>='0' && c<='9')){
                 sb.append(c);
+            }else if(sb.length()==0){
+                return 0;
             }else{
                 break;
             }
