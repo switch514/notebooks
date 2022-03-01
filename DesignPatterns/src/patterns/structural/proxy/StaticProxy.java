@@ -16,6 +16,11 @@ public class StaticProxy implements ISubject {
         subject.operation();
     }
 
+    @Override
+    public void operation2() {
+
+    }
+
     public void afterOperation() {
         System.out.println("after operation visited.");
     }

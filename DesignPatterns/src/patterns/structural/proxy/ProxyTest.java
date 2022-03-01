@@ -27,5 +27,7 @@ public class ProxyTest {
             }
         });
         sj2.operation();
+        sj2.operation2();
+
     }
 }

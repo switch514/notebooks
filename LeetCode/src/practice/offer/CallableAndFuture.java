@@ -1,5 +1,6 @@
 package practice.offer;
 
+import java.util.LinkedHashMap;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -11,6 +12,7 @@ public class CallableAndFuture {
             public Integer call() throws Exception {
                 Thread.sleep(2000);
                 return 1;
+
             }
         };
 
@@ -32,6 +34,7 @@ public class CallableAndFuture {
                 System.out.println("not ready");
             }
         }
+
 
     }
 }

@@ -32,7 +32,7 @@ public class LambdaTest {
         Predicate<String> startWithR = s -> s.startsWith("R");
 
         List<String> aList = Optional.ofNullable(players).orElse(new ArrayList<>());
-        aList.ifPresent((s)-> System.out.println("List ok " + s.size()));
+        //aList.ifPresent((s)-> System.out.println("List ok " + s.size()));
 
     }
 }

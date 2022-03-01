@@ -1,6 +1,8 @@
 package practice.offer;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class CountDownTest {
     public static CountDownLatch countDown = null;
@@ -10,7 +12,9 @@ public class CountDownTest {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
+                //lock.lock();
                 try {
+
                     Thread.sleep(2000);
                     System.out.println("T1 OK");
                     countDown.countDown();
@@ -55,5 +59,8 @@ public class CountDownTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+
+
     }
 }

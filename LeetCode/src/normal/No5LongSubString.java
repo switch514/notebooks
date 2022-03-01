@@ -6,6 +6,9 @@ public class No5LongSubString {
             return "";
         }
 
+
+
+
         char[] chars = s.toCharArray();
         if (s.length() == 1) {
             return String.valueOf(chars[0]);

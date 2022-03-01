@@ -1,5 +1,6 @@
 package normal;
 
+import java.util.Calendar;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -13,7 +14,6 @@ public class No731Calendar {
     public boolean book(int start, int end) {
         rangeMap.put(start, rangeMap.getOrDefault(start, 0) +1);
         rangeMap.put(end, rangeMap.getOrDefault(end, 0) -1);
-
         int active = 0;
         for (int count : rangeMap.values()){
             active = active + count;
